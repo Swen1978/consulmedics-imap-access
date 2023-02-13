@@ -1,5 +1,5 @@
 {
-    "name": "consulmedics/imap",
+    "name": "consulmedics/imap-access",
     "description": "The IMAP Access folder logic for consulmedics",
     "type": "library",
     "authors": [
