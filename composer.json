@@ -1,0 +1,17 @@
+{
+    "name": "consulmedics/imap",
+    "description": "The IMAP Access folder logic for consulmedics",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Bernhard Hörmann",
+            "email": "hoermann.b@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Consulmedics\\ImapAccess\\": "src/"
+        }
+    }
+}
