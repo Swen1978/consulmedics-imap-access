@@ -15,7 +15,8 @@ class ImapTable extends LivewireDatatable
 
     public function builder()
     {
-        return ImapMail::query();
+        return ImapMail::query()
+            ->where("type", $this->folder);
     }
 
 
