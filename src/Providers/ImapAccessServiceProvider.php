@@ -27,7 +27,7 @@ class ImapAccessServiceProvider extends ServiceProvider
             ->group(function(){
                 Route::get('list/{folder}', [ImapController::class, 'index'])->name('list');
                 Route::get('show/{message:number}', [ImapController::class, 'show'])->name('show');
-                Route::get('status-change/{message:number}/{status?}', [ImapController::class, 'setStatus'])->name('status-change');
+                Route::get('status-change/{message}/{status?}', [ImapController::class, 'setStatus'])->name('status-change');
                 Route::get('download-attachment/{message:number}/{name}', [ImapController::class, 'downloadAttachment'])->name('download-attachment');
             });
 
