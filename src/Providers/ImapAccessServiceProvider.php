@@ -5,6 +5,7 @@ namespace Consulmedics\ImapAccess\Providers;
 use Consulmedics\ImapAccess\Console\Commands\ImapMailsFetchCommand;
 use Consulmedics\ImapAccess\Http\Controllers\ImapController;
 use Consulmedics\ImapAccess\Http\Livewire\ImapTable;
+use Consulmedics\ImapAccess\Http\Livewire\ImapTableActionBar;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -15,10 +16,11 @@ class ImapAccessServiceProvider extends ServiceProvider
     public function boot()
     {
         // Views
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'imap');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'imap-access');
 
         // Livewire Component
         Livewire::component('imap-access:imap-table', ImapTable::class);
+        Livewire::component('imap-access:imap-table-action-bar', ImapTableActionBar::class);
 
         // Routes
         Route::middleware(['web', 'locale', 'auth_admin:admin'])

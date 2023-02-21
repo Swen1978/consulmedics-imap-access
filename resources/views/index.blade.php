@@ -7,6 +7,7 @@
                     {{ $label }}
                 </div>
                 <div class="card-body">
+                    <livewire:imap-access:imap-table-action-bar />
                     <livewire:imap-access:imap-table :folder="$folder" />
                 </div>
             </div>

@@ -23,6 +23,8 @@ class ImapTable extends LivewireDatatable
     public function columns()
     {
         return [
+            Column::checkbox(),
+
             Column::callback(['status'], function($status) {
                 return match($status) {
                     "0" => '<i title="'.__('Status unchecked').'" class="mdi mdi-bookmark" style="color: #C49102; font-size: 24px;"></i>',
@@ -51,5 +53,11 @@ class ImapTable extends LivewireDatatable
                 return "<a href=\"".$url."\">".__("Read")."</a>";
             })->label(__("Actions")),
         ];
+    }
+
+
+    public function updatedSelected()
+    {
+        $this->emit("selectionChanged", $this->selected);
     }
 }

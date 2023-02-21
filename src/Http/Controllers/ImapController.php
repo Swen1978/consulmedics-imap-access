@@ -10,7 +10,7 @@ class ImapController extends Controller
 {
     public function index(string $folder): View
     {
-        return view('imap::index', [
+        return view('imap-access::index', [
             'folder' => $folder,
             'label' => __(config("imap-access.folders.$folder.label"))
         ]);
@@ -21,7 +21,7 @@ class ImapController extends Controller
     {
         $message->fetchDetails();
 
-        return view("imap::show", [
+        return view("imap-access::show", [
             "folder" => $message->type,
             "imapMail" => $message
         ]);
