@@ -37,7 +37,7 @@ class ImapMailsFetchCommand extends Command
                  */
                 $imapMail = ImapMail::make();
                 $imapMail->fillData($msg, true);
-                $imap->type = $configName;
+                $imapMail->type = $configName;
 
                 if(!ImapMail::query()->where("number", $imapMail->number)->first()) {
                     $this->info("Added new mail with number " . $imapMail->number . ": \"" . $imapMail->subject . "\" from "  . $imapMail->date->format("Y-m-d H:i:s"));
