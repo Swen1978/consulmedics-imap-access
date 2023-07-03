@@ -27,8 +27,8 @@ class ImapTable extends LivewireDatatable
 
             Column::callback(['status'], function($status) {
                 return match($status) {
-                    "0" => '<i title="'.__('Status unchecked').'" class="mdi mdi-bookmark" style="color: #C49102; font-size: 24px;"></i>',
-                    "1" => '<i title="'.__('Status checked').'" class="mdi mdi-bookmark-check" style="color: var(--primary); font-size: 24px;"></i>',
+                    "0" => '<i title="'.__('Status unchecked').'" class="fa-regular fa-envelope-dot" style="color: red; font-size: 24px;"></i>',
+                    "1" => '<i title="'.__('Status checked').'" class="fa-regular fa-envelope-circle-check" style="color: green; font-size: 24px;"></i>',
                 };
             })
                 ->alignCenter()
