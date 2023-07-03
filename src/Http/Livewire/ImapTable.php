@@ -27,12 +27,12 @@ class ImapTable extends LivewireDatatable
 
             Column::callback(['status'], function($status) {
                 return match($status) {
-                    "0" => '<i title="'.__('Status unchecked').'" class="fa-regular fa-envelope-dot" style="color: red; font-size: 24px;"></i>',
-                    "1" => '<i title="'.__('Status checked').'" class="fa-regular fa-envelope-circle-check" style="color: green; font-size: 24px;"></i>',
+                    "0" => '<i title="'.__('Status unchecked').'" class="fa-solid fa-envelope" style="color: #e70000; font-size: 24px;"></i>',
+                    "1" => '<i title="'.__('Status checked').'" class="fa-solid fa-file-check" style="color: #307d30; font-size: 24px;"></i>',
                 };
             })
                 ->alignCenter()
-                ->label(__('Check Status'))
+                ->label(__('Status'))
                 ->filterable([
                     ["id" => 0, "name" => __('Status unchecked')],
                     ["id" => 1, "name" => __('Status checked')],
