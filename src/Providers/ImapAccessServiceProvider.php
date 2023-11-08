@@ -3,6 +3,7 @@
 namespace Consulmedics\ImapAccess\Providers;
 
 use Consulmedics\ImapAccess\Console\Commands\ImapMailsFetchCommand;
+use Consulmedics\ImapAccess\Console\Commands\ImapMailsMarkOldAsFinished;
 use Consulmedics\ImapAccess\Http\Controllers\ImapController;
 use Consulmedics\ImapAccess\Http\Livewire\ImapTable;
 use Consulmedics\ImapAccess\Http\Livewire\ImapTableActionBar;
@@ -36,6 +37,7 @@ class ImapAccessServiceProvider extends ServiceProvider
         // Cronjob
         $this->callAfterResolving(Schedule::class, function (Schedule $schedule) {
             $schedule->command(ImapMailsFetchCommand::class)->hourly();
+            $schedule->command(ImapMailsMarkOldAsFinished::class)->daily();
         });
     }
 
@@ -44,7 +46,8 @@ class ImapAccessServiceProvider extends ServiceProvider
         parent::register();
 
         $this->commands([
-            ImapMailsFetchCommand::class
+            ImapMailsFetchCommand::class,
+            ImapMailsMarkOldAsFinished::class
         ]);
     }
 }
