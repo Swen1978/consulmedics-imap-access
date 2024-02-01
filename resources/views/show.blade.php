@@ -9,7 +9,7 @@
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="card-header">
                         <div class="float-right">
-                            <a href="{{ route('admin.imap-mail.list', [$folder]) }}" class="btn btn-github mr-2">
+                            <a href="{{ route('admin.imap-mail.list', [$folder, "page" => $prevPage]) }}" class="btn btn-github mr-2">
                                 {{ __('Cancel') }}
                             </a>
 

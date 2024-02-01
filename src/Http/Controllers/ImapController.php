@@ -20,10 +20,19 @@ class ImapController extends Controller
     public function show(ImapMail $message): View
     {
         $message->fetchDetails();
+        $prevPage = 1;
+        $prev = url()->previous() ? parse_url(url()->previous()) : [];
+
+        if($prevQuery = $prev["query"] ?? null) {
+            $params = [];
+            parse_str($prevQuery, $params);
+            $prevPage = $params["page"] ?? 1;
+        }
 
         return view("imap-access::show", [
             "folder" => $message->type,
-            "imapMail" => $message
+            "imapMail" => $message,
+            "prevPage" => $prevPage
         ]);
     }
 
