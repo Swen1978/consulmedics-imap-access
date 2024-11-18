@@ -1,16 +1,12 @@
-@extends(config("imap-access.layout"))
+@extends(config('imap-access.layout'))
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    {{ $label }}
-                </div>
-                <div class="card-body">
-                    <livewire:imap-access:imap-table-action-bar />
-                    <livewire:imap-access:imap-table :folder="$folder" />
-                </div>
-            </div>
+    <div>
+        <h3 class="mt-0">
+            {{ $label }}
+        </h3>
+        <div class="card-body">
+            <livewire:imap-access:imap-table-action-bar />
+            <livewire:imap-access:imap-table :folder="$folder" />
         </div>
     </div>
 @endsection

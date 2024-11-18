@@ -5,10 +5,13 @@
             @if ($errors)
                 {{ $errors->first() }}
             @endif
-            <div class="card">
+            <div>
                 <form action="" method="POST" enctype="multipart/form-data">
-                    <div class="card-header">
-                        <div class="float-right">
+                    <div class="grid grid-cols-2">
+                        <div class="py-2">
+                            {{ __('Read Message') }}
+                        </div>
+                        <div class="flex justify-end">
                             <a href="{{ route('admin.imap-mail.list', [$folder, "page" => $prevPage]) }}" class="btn btn-github mr-2">
                                 {{ __('Cancel') }}
                             </a>
@@ -21,15 +24,11 @@
                                    class="btn btn-github">{{ __('Mark unreaded') }}</a>
                             @endif
                         </div>
-
-                        <div class="py-2">
-                            {{ __('Read Message') }}
-                        </div>
                     </div>
                     <div class="card-body">
                         {{ csrf_field() }}
-                        <div class="row">
-                            <div class="col-md-6">
+                        <div class="grid grid-cols-2">
+                            <div class="">
                                 <div class="row">
                                     <div class="col-md-2">
                                         <label for=""><strong>{{ __('Subject') }}:</strong></label>
