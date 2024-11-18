@@ -12,20 +12,20 @@
                             {{ __('Read Message') }}
                         </div>
                         <div class="flex justify-end">
-                            <a href="{{ route('admin.imap-mail.list', [$folder, "page" => $prevPage]) }}" class="btn btn-github mr-2">
+                            <a href="{{ route('admin.imap-mail.list', [$folder, "page" => $prevPage]) }}" class="btn btn-secondary mr-2">
                                 {{ __('Cancel') }}
                             </a>
 
                             @if ($imapMail->status == 0)
                                 <a href="{{ route('admin.imap-mail.status-change', [$imapMail->id, "1"]) }}"
-                                   class="btn btn-github">{{ __('Mark readed') }}</a>
+                                   class="btn btn-primary">{{ __('Mark readed') }}</a>
                             @else
                                 <a href="{{ route('admin.imap-mail.status-change', [$imapMail->id, "0"]) }}"
-                                   class="btn btn-github">{{ __('Mark unreaded') }}</a>
+                                   class="btn btn-primary">{{ __('Mark unreaded') }}</a>
                             @endif
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="bg-white p-3 border-gray-300 rounded-xl">
                         {{ csrf_field() }}
                         <div class="grid grid-cols-2">
                             <div class="">
