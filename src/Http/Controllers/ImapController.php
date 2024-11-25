@@ -8,14 +8,6 @@ use Illuminate\View\View;
 
 class ImapController extends Controller
 {
-    public function index(string $folder): View
-    {
-        return view('imap-access::index', [
-            'folder' => $folder,
-            'label' => __(config("imap-access.folders.$folder.label"))
-        ]);
-    }
-
 
     public function show(ImapMail $message): View
     {

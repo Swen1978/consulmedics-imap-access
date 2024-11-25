@@ -2,15 +2,15 @@
 
 namespace Consulmedics\ImapAccess\Providers;
 
-use Consulmedics\ImapAccess\Console\Commands\ImapMailsFetchCommand;
-use Consulmedics\ImapAccess\Console\Commands\ImapMailsMarkOldAsFinished;
-use Consulmedics\ImapAccess\Http\Controllers\ImapController;
-use Consulmedics\ImapAccess\Http\Livewire\ImapTable;
-use Consulmedics\ImapAccess\Http\Livewire\ImapTableActionBar;
-use Illuminate\Console\Scheduling\Schedule;
+use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
+use Illuminate\Console\Scheduling\Schedule;
+use Consulmedics\ImapAccess\Http\Livewire\ImapTable;
+use Consulmedics\ImapAccess\Http\Controllers\ImapController;
+use Consulmedics\ImapAccess\Http\Livewire\ImapTableActionBar;
+use Consulmedics\ImapAccess\Console\Commands\ImapMailsFetchCommand;
+use Consulmedics\ImapAccess\Console\Commands\ImapMailsMarkOldAsFinished;
 
 class ImapAccessServiceProvider extends ServiceProvider
 {
@@ -28,7 +28,7 @@ class ImapAccessServiceProvider extends ServiceProvider
             ->prefix('admin/imap-mail/')
             ->as('admin.imap-mail.')
             ->group(function(){
-                Route::get('list/{folder}', [ImapController::class, 'index'])->name('list');
+                Route::get('list/{folder}', \Consulmedics\ImapAccess\Http\Livewire\ImapTable::class)->name('list');
                 Route::get('show/{message:number}', [ImapController::class, 'show'])->name('show');
                 Route::get('status-change/{message}/{status?}', [ImapController::class, 'setStatus'])->name('status-change');
                 Route::get('download-attachment/{message:number}/{name}', [ImapController::class, 'downloadAttachment'])->name('download-attachment');
