@@ -6,6 +6,10 @@
         {
             "name": "Bernhard Hörmann",
             "email": "hoermann.b@gmail.com"
+        },
+        {
+            "name": "Edwin Krause",
+            "email": "edwin@kitc.eu"
         }
     ],
     "require": {
