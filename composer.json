@@ -1,6 +1,6 @@
 {
     "name": "consulmedics/imap-access",
-    "description": "The IMAP Access folder logic for consulmedics",
+    "description": "The IMAP Access folder logic for consulmedics V1.0.1",
     "license": "MIT",
     "keywords": [
         "edwink",
