@@ -8,7 +8,7 @@ use Filament\Tables\Actions\BulkAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
-use Filament\Tables\Concerns\InteractsWithForms;
+use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Contracts\HasForms;
 use Illuminate\Database\Eloquent\Builder;
