@@ -8,7 +8,9 @@ use Filament\Tables\Actions\BulkAction;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
+use Filament\Tables\Concerns\InteractsWithForms;
 use Filament\Tables\Contracts\HasTable;
+use Filament\Tables\Contracts\HasForms;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\HtmlString;
@@ -16,9 +18,9 @@ use Livewire\Component;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 
-class ImapTable extends Component implements HasTable
+class ImapTable extends Component implements HasTable, HasForms
 {
-    use InteractsWithTable;
+    use InteractsWithTable, InteractsWithForms;
 
     public $perPage = 100;
     public $sort = "date|desc";
