@@ -1,6 +1,6 @@
 # Tracks user activity and shows currently active users
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/edwink/filament-user-activity.svg?style=flat-square)](https://packagist.org/packages/consulmedics/imap-access)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/consulmedics/imap-access.svg?style=flat-square)](https://packagist.org/packages/consulmedics/imap-access)
 [![Total Downloads](https://img.shields.io/packagist/dt/consulmedics/imap-access.svg?style=flat-square)](https://packagist.org/packages/consulmedics/imap-access)
 
 The IMAP Access folder logic for consulmedics.de
