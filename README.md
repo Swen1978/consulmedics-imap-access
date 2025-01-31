@@ -1,4 +1,4 @@
-# Tracks user activity and shows currently active users
+# IMAP Access to a folder in some mailbox
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/consulmedics/imap-access.svg?style=flat-square)](https://packagist.org/packages/consulmedics/imap-access)
 [![Total Downloads](https://img.shields.io/packagist/dt/consulmedics/imap-access.svg?style=flat-square)](https://packagist.org/packages/consulmedics/imap-access)
