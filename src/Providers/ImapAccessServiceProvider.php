@@ -19,6 +19,8 @@ class ImapAccessServiceProvider extends ServiceProvider
         // Views
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'imap-access');
 
+        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'imap-access');
+
         // Livewire Component
         Livewire::component('imap-access:imap-table', ImapTable::class);
         Livewire::component('imap-access:imap-table-action-bar', ImapTableActionBar::class);

@@ -29,7 +29,7 @@ class ImapController extends Controller
     }
 
 
-    public function setStatus(ImapMail $message, bool $status = true)
+    public function setStatus(ImapMail $message, int $status = 1)
     {
         $message->update([
             "status" => $status

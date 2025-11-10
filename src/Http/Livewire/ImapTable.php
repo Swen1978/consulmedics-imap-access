@@ -56,14 +56,15 @@ class ImapTable extends Component implements HasTable, HasForms
                 TextColumn::make('status')
                     ->formatStateUsing(function ($state) {
                         $result = match ($state) {
-                            0 => '<i title="' . __('Status unchecked') . '" class="fa-solid fa-envelope" style="color: #e70000; font-size: 24px;"></i>',
-                            1 => '<i title="' . __('Status checked') . '" class="fa-solid fa-file-check" style="color: #307d30; font-size: 24px;"></i>',
+                            0 => '<i title="' . __('imap-access::imap-mail.status.not marked') . '" class="fa-solid fa-envelope" style="color: #e6ba2cff; font-size: 24px;"></i>',
+                            1 => '<i title="' . __('imap-access::imap-mail.status.marked') . '" class="fa-solid fa-file-check" style="color: #307d30; font-size: 24px;"></i>',
+                            2 => '<i title="' . __('imap-access::imap-mail.status.attachment faulty') . '" class="fa-solid fa-paperclip" style="color: #ff0000ff; font-size: 24px;"></i>',
                             default => $state
                         };
                         return new HtmlString($result);
                     })
                     ->alignCenter()
-                    ->label(__('Status')),
+                    ->label(__('imap-access::imap-mail.Status')),
                 TextColumn::make('from')
                     ->sortable()
                     ->label(__('From'))
@@ -72,7 +73,7 @@ class ImapTable extends Component implements HasTable, HasForms
                     ->sortable()
                     ->label(__("date")),
                 TextColumn::make('subject')
-                    ->label(__('Subject'))
+                    ->label(__('imap-access::imap-mail.Subject'))
                     ->searchable()
             ])
             ->filters([
@@ -87,7 +88,7 @@ class ImapTable extends Component implements HasTable, HasForms
             ->persistFiltersInSession()
             ->persistSearchInSession()
             ->persistSortInSession()
-            ->searchPlaceholder("Suche in Von, Betreff");
+            ->searchPlaceholder(__("imap-access::imap-mail.searchPlaceholder"));
     }
 
 
