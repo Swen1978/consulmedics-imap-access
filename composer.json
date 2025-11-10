@@ -1,11 +1,12 @@
 {
     "name": "consulmedics/imap-access",
-    "description": "The IMAP Access folder logic for consulmedics V1.0.1",
+    "description": "Access certain folders in an IMAP mailbox. Developed for specific needs in Consulmedics.*",
     "license": "MIT",
     "keywords": [
         "edwink",
         "consulmedics",
-        "imap"
+        "imap",
+        "mailbox-access"
     ],
     "type": "library",
     "authors": [
