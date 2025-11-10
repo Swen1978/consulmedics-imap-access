@@ -66,20 +66,28 @@ class ImapTable extends Component implements HasTable, HasForms
                     ->label(__('Status')),
                 TextColumn::make('from')
                     ->sortable()
-                    ->label(__('From')),
+                    ->label(__('From'))
+                    ->searchable(),
                 TextColumn::make('date')
                     ->sortable()
                     ->label(__("date")),
                 TextColumn::make('subject')
                     ->label(__('Subject'))
+                    ->searchable()
             ])
             ->filters([
                 SelectFilter::make('status')
                     ->options([
                         0 => "Nicht bearbeitet",
                         1 => "Erledigt",
+                        2 => "Anhang fehlerhaft"
                     ])
-            ]);
+            ])
+            ->paginationPageOptions([10, 50, 100])
+            ->persistFiltersInSession()
+            ->persistSearchInSession()
+            ->persistSortInSession()
+            ->searchPlaceholder("Suche in Von, Betreff");
     }
 
 
