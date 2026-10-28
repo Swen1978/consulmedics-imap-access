@@ -8,7 +8,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
 use Consulmedics\ImapAccess\Http\Livewire\ImapTable;
 use Consulmedics\ImapAccess\Http\Controllers\ImapController;
-use Consulmedics\ImapAccess\Http\Livewire\ImapTableActionBar;
 use Consulmedics\ImapAccess\Console\Commands\ImapMailsFetchCommand;
 use Consulmedics\ImapAccess\Console\Commands\ImapMailsMarkOldAsFinished;
 
@@ -23,7 +22,6 @@ class ImapAccessServiceProvider extends ServiceProvider
 
         // Livewire Component
         Livewire::component('imap-access:imap-table', ImapTable::class);
-        Livewire::component('imap-access:imap-table-action-bar', ImapTableActionBar::class);
 
         // Routes
         Route::middleware(['web', 'locale', 'auth_admin:admin'])
